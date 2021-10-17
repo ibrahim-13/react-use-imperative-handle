@@ -2,16 +2,26 @@ import React from "react";
 import { Alert, AlertInstance } from "./alert.component";
 
 function App() {
-  const alert = React.useRef<AlertInstance | null>(null);
+  const alertModal = React.useRef<AlertInstance | null>(null);
   return (
     <div>
       <h1>
         DemoApp: <b>useImperativeHandle()</b> Hook
       </h1>
-      <button onClick={() => alert.current?.open({ msg: "Alert from parent" })}>
+      <button
+        onClick={() => {
+          // Open alert
+          alertModal.current?.open({
+            msg: "Alert from parent",
+            onSuccess: () => alert("Success"),
+          });
+          // Close alert modal after 3 seconds
+          setTimeout(() => alertModal.current?.close(), 3000);
+        }}
+      >
         Open Alert
       </button>
-      <Alert ref={alert} />
+      <Alert ref={alertModal} />
     </div>
   );
 }
