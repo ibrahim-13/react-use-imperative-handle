@@ -22,7 +22,7 @@ const customStyles = {
   },
 };
 
-export const Alert = React.forwardRef<{}, {}>(function AlertComponent(props, ref): JSX.Element {
+export const Alert = React.forwardRef<AlertInstance, {}>(function Alert(_, ref): JSX.Element {
   const [data, setData] = React.useState<AlertData>();
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const closeAlert = React.useCallback(() => setIsOpen(false), []);
