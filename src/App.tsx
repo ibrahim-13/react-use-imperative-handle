@@ -15,7 +15,7 @@ function App() {
             msg: "Alert from parent",
             onSuccess: () => alert("Success"),
           });
-          // Close alert modal after 3 seconds
+          // Close alert modal after 2 seconds
           setTimeout(() => alertModal.current?.close(), 2000);
         }}
       >
