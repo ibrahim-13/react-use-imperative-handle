@@ -16,7 +16,7 @@ function App() {
             onSuccess: () => alert("Success"),
           });
           // Close alert modal after 3 seconds
-          setTimeout(() => alertModal.current?.close(), 3000);
+          setTimeout(() => alertModal.current?.close(), 2000);
         }}
       >
         Open Alert
